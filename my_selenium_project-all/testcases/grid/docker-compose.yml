@@ -1,0 +1,63 @@
+services:
+# for chrome and edge due to they are not supported based on arm64 architecture, so comment!
+#  chrome:
+#    image: selenium/node-chrome:dev
+#    shm_size: 2gb
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+#
+#  edge:
+#    image: selenium/node-edge:dev
+#    shm_size: 2gb
+#    depends_on:
+#      - selenium-hub
+#    environment:
+#      - SE_EVENT_BUS_HOST=selenium-hub
+
+  firefox:
+    image: selenium/node-firefox:4.32.0-20250505
+    container_name: selenium-firefox
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_NODE_MAX_SESSIONS=10
+#      - SE_EVENT_BUS_PUBLISHER_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBER_PORT=4443
+    networks:
+      - grid
+  chromium:
+    image: selenium/node-chromium:4.32.0-20250505
+    container_name: selenium-chromium
+    shm_size: 2gb
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_NODE_MAX_SESSIONS=5
+      - SE_NODE_OVERRIDE_MAX_SESSIONS=false # 生产建议false
+#      - SE_EVENT_BUS_PUBLISHER_PORT=4442
+#      - SE_EVENT_BUS_SUBSCRIBER_PORT=4443
+    networks:
+      - grid
+
+  selenium-hub:
+    image: selenium/hub:4.32.0-20250505
+    container_name: selenium-hub
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: '1024M'
+    networks:
+      - grid
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+networks:
+  grid:
+    driver: bridge

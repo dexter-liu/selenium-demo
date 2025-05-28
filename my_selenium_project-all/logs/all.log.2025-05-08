@@ -1,0 +1,28 @@
+2025-05-08 14:02:26,613 - INFO - 测试用户登录
+2025-05-08 14:02:26,643 - DEBUG - 输入用户名称: 
+2025-05-08 14:02:26,692 - DEBUG - 输入用户密码: 123456
+2025-05-08 14:02:30,270 - DEBUG - 输入用户名称: admin
+2025-05-08 14:02:30,298 - DEBUG - 输入用户密码: jpress
+2025-05-08 14:02:33,841 - ERROR - hi, dexter：报错了
+Traceback (most recent call last):
+  File "/Users/dexter/geektime/Selenium/Demo/my_selenium_project-all/testcases/log/test_user_login.py", line 76, in test_user_login_ok
+    assert self.driver.title == expected + '=!'
+AssertionError: assert '用户中心' == '用户中心=!'
+  
+  - 用户中心=!
+  ?     --
+  + 用户中心
+2025-05-08 14:06:18,581 - INFO - 测试用户登录
+2025-05-08 14:06:18,606 - DEBUG - 输入用户名称: 
+2025-05-08 14:06:18,648 - DEBUG - 输入用户密码: 123456
+2025-05-08 14:06:22,232 - DEBUG - 输入用户名称: admin
+2025-05-08 14:06:22,261 - DEBUG - 输入用户密码: jpress
+2025-05-08 14:06:25,802 - ERROR - hi, dexter：报错了
+Traceback (most recent call last):
+  File "/Users/dexter/geektime/Selenium/Demo/my_selenium_project-all/testcases/log/test_user_login.py", line 76, in test_user_login_ok
+    assert self.driver.title == expected + '~!'
+AssertionError: assert '用户中心' == '用户中心~!'
+  
+  - 用户中心~!
+  ?     --
+  + 用户中心

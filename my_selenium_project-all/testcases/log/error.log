@@ -1,0 +1,18 @@
+2025-05-08 14:02:33,841 - ERROR - test_user_login.py[:78] - hi, dexter：报错了
+Traceback (most recent call last):
+  File "/Users/dexter/geektime/Selenium/Demo/my_selenium_project-all/testcases/log/test_user_login.py", line 76, in test_user_login_ok
+    assert self.driver.title == expected + '=!'
+AssertionError: assert '用户中心' == '用户中心=!'
+  
+  - 用户中心=!
+  ?     --
+  + 用户中心
+2025-05-08 14:06:25,802 - ERROR - test_user_login.py[:78] - hi, dexter：报错了
+Traceback (most recent call last):
+  File "/Users/dexter/geektime/Selenium/Demo/my_selenium_project-all/testcases/log/test_user_login.py", line 76, in test_user_login_ok
+    assert self.driver.title == expected + '~!'
+AssertionError: assert '用户中心' == '用户中心~!'
+  
+  - 用户中心~!
+  ?     --
+  + 用户中心
