@@ -24,10 +24,15 @@ class LoginTestCase(unittest.TestCase):
     def test02(self):
         print('test02')
         self.assertGreaterEqual(5, 4)
-
+    # 只针对test开头的方法， 比如aaa方法不会执行
     def aaa(self):
         print('aaa')
         self.assertGreaterEqual(1, 2)
+
+
+def test_out_class():
+    print(f'类外边的测试方法')
+
 
 if __name__ == '__main__':
     unittest.main()

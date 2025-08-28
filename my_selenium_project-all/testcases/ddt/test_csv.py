@@ -5,9 +5,9 @@ import csv
 
 def get_data():
     with open('test.csv') as f:
-        lst = csv.reader(f)
+        lst = csv.reader(f)  # lst是一个迭代器
         my_data = []
-        for row in lst:
+        for row in lst:  # 每次迭代会返回一行数据，row是一个列表
             my_data.extend(row)
     return my_data
 

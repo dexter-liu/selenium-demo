@@ -28,3 +28,5 @@ class MyTestCase02(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+# unittest.main()是unittest模块提供的主要入口点，它会自动触发当前文件中所有以test开头的方法的执行。按照测试方法的名称顺序执行测试。
